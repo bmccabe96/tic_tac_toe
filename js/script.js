@@ -55,6 +55,9 @@ const displayController = (() => {
             gameController.reset();
             gameController.setPlayers(playerName1, playerMarking1, playerName2, playerMarking2);
             gameBoard.createEmptyBoard();
+            clearWinnerMessage();
+            clearInputs();
+            setCurrentMatchPlayers(playerName1, playerName2);
         }
     });
 
@@ -66,7 +69,33 @@ const displayController = (() => {
                 }
             });
         });
+
+    const setCurrentMatchPlayers = (player1, player2) => {
+        document.querySelector('.current-player-1').textContent = player1;
+        document.querySelector('.current-player-2').textContent = player2;
+        document.querySelector('.vs').textContent = "VS";
+    }
+
+    const clearInputs = () => {
+        document.querySelector('#player-1').value = "";
+        document.querySelector('#player-1-marking').value = "";
+        document.querySelector('#player-2').value = "";
+        document.querySelector('#player-2-marking').value = "";
+    }
     
+    const clearWinnerMessage = () => {
+        const winningMessage = document.querySelector(".winner");
+        winningMessage.textContent = "";
+    }
+
+    const displayWinner = (winner) => {
+        const winningMessage = document.querySelector(".winner");
+        winningMessage.textContent = `${winner} wins!!!`;
+    };
+    
+    return {
+        displayWinner
+    }
 })();
 
 
@@ -104,6 +133,7 @@ const gameController = (() => {
     const winnerFound = () => {
         const winner = getCurrentPlayerName();
         console.log(winner);
+        displayController.displayWinner(winner);
     };
 
     const playRound = (i) => {

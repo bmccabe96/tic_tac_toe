@@ -10,28 +10,50 @@
 </head>
 <body>
     <div class="setup">
-        <label for="player-1">Player 1</label>
-        <input type="text" id="player-1" placeholder="name">
-        <label for="player-1-marking">Marking</label>
-        <input type="text" id="player-1-marking" maxlength="1" placeholder="marking">
-
-        <label for="player-2">Player 2</label>
-        <input type="text" id="player-2" placeholder="name">
-        <label for="player-2-marking">Marking</label>
-        <input type="text" id="player-2-marking" maxlength="1" placeholder="marking">
-
-        <button class="begin-game">New Game!</button>
+        <div class="players-section">
+            <div class="players-left">
+                <div>
+                    <label style="margin-right: 3px" for="player-1">Player 1</label>
+                    <input type="text" id="player-1" placeholder="name">
+                </div>
+                <div class="marking">
+                    <label for="player-1-marking">Marking</label>
+                    <input type="text" id="player-1-marking" maxlength="1" placeholder="marking">
+                </div>  
+            </div>
+           <div class="players-right">
+               <div>
+                    <label style="margin-right: .5px" for="player-2">Player 2</label>
+                    <input type="text" id="player-2" placeholder="name">
+               </div>
+               <div class="marking">
+                    <label for="player-2-marking">Marking</label>
+                    <input type="text" id="player-2-marking" maxlength="1" placeholder="marking">
+               </div>      
+           </div>
+        </div>
+        <div class=btn-container>
+            <button class="btn begin-game">New Game!</button>
+        </div>
     </div>
     <div class="play-area">
-        <div class="block-0 tile">X</div>
-        <div class="block-1 tile">X</div>
-        <div class="block-2 tile">X</div>
-        <div class="block-3 tile">X</div>
-        <div class="block-4 tile">X</div>
-        <div class="block-5 tile">X</div>
-        <div class="block-6 tile">X</div>
-        <div class="block-7 tile">X</div>
-        <div class="block-8 tile">X</div>
+        <div class="block-0 tile"></div>
+        <div class="block-1 tile"></div>
+        <div class="block-2 tile"></div>
+        <div class="block-3 tile"></div>
+        <div class="block-4 tile"></div>
+        <div class="block-5 tile"></div>
+        <div class="block-6 tile"></div>
+        <div class="block-7 tile"></div>
+        <div class="block-8 tile"></div>
+    </div>
+    <div class="current-match">
+        <div class="current-player-1"></div>
+        <div class="vs"></div>
+        <div class="current-player-2"></div>
+    </div>
+    <div class="winner">
+
     </div>
     
 </body>
