@@ -90,7 +90,7 @@ const displayController = (() => {
 
     const displayWinner = (winner) => {
         const winningMessage = document.querySelector(".winner");
-        winningMessage.textContent = `${winner} wins!!!`;
+        winningMessage.textContent = winner;
     };
     
     return {
@@ -128,12 +128,18 @@ const gameController = (() => {
         else if (board[2] === board[4] && board[2] === board[6] && board[2] !== "") {winnerFound();}
         else if (board[3] === board[4] && board[3] === board[5] && board[3] !== "") {winnerFound();}
         else if (board[6] === board[7] && board[6] === board[8] && board[6] !== "") {winnerFound();}
+        if (!board.includes("")){tie();}
+    }
+
+    const tie = () => {
+        displayController.displayWinner("TIE GAME");
+        document.querySelector('#player-1').focus();
     }
 
     const winnerFound = () => {
         const winner = getCurrentPlayerName();
         console.log(winner);
-        displayController.displayWinner(winner);
+        displayController.displayWinner(`${winner} wins!!`);
         document.querySelector('#player-1').focus();
     };
 
