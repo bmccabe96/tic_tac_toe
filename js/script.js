@@ -134,6 +134,7 @@ const gameController = (() => {
         const winner = getCurrentPlayerName();
         console.log(winner);
         displayController.displayWinner(winner);
+        document.querySelector('#player-1').focus();
     };
 
     const playRound = (i) => {

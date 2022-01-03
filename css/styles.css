@@ -6,6 +6,7 @@ body{
     align-items: center;
     gap: 20px;
     margin-top: 20px;
+    background-color: rgb(166, 223, 166, .4);
 }
 
 .play-area {
@@ -49,6 +50,7 @@ body{
     border: 2px solid black;
     border-radius: 4px;
     background-color: rgb(166, 223, 166);
+    cursor: pointer;
   
 }
 
@@ -73,4 +75,17 @@ body{
 
 .marking {
     margin-top:5px;
+}
+
+.winner {
+    animation: blinker 1s linear infinite;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(93, 182, 93);
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
